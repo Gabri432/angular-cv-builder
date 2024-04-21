@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class OptionCardComponent {
   @Input() option: string = "";
-
+  @Input() route: string = "";
 }
