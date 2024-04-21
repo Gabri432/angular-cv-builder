@@ -1,0 +1,11 @@
+@use '../../../styles.scss' as style;
+#footer {
+    background-color: style.$gabri-theme;
+    font-size: 18px;
+    color: white;
+    padding: 2%;
+
+    #my-name {
+        padding-left: 10%;
+    }
+}
