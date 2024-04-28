@@ -1,1 +1,14 @@
-<p>experiences works!</p>
+<div id="experiences-section">
+    <h2>Working Experiences</h2>
+    <app-input-bar [label]="'Job Title'" [placeholder]="'Software Engineer at Microsoft'"></app-input-bar>
+    <app-input-bar [label]="'Short Description'" [placeholder]="'Development of UI components for VScode'"></app-input-bar>
+    <app-input-bar [label]="'Period'" [placeholder]="'March 2017 to June 2021'"></app-input-bar>
+    <div id="experiences-extra" *ngFor="let experience of experiences">
+        <br />
+        <app-input-bar [label]="'Job Title'" [placeholder]="'Software Engineer at Microsoft'"></app-input-bar>
+        <app-input-bar [label]="'Short Description'" [placeholder]="'Development of UI components for VScode'"></app-input-bar>
+        <app-input-bar [label]="'Period'" [placeholder]="'March 2017 to June 2021'"></app-input-bar>
+    </div>
+    <button id="add-experiences" title="Add new experience" (click)="addExperience()">+</button>
+    <button id="remove-experiences" title="Remove latest experience" (click)="removeExperience()" *ngIf="experiences.length >= 1">x</button>
+</div>

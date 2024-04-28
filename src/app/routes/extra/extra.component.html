@@ -1,1 +1,11 @@
-<p>extra works!</p>
+<div id="extra-section">
+    <h2>Extra details about you</h2>
+    <app-input-bar [label]="''" [placeholder]="'I like practicing sports'"></app-input-bar>
+    <app-input-bar [label]="''" [placeholder]="'I like playing chess'"></app-input-bar>
+    <div id="experiences-extra" *ngFor="let extra of extras">
+        <br />
+        <app-input-bar [label]="''" [placeholder]="'I like playing chess'"></app-input-bar>
+    </div>
+    <button id="add-extras" title="Add new extra detail" (click)="addExtras()">+</button>
+    <button id="remove-extras" title="Remove latest detail" (click)="removeExtra()" *ngIf="extras.length >= 1">x</button>
+</div>

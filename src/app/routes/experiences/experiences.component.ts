@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./experiences.component.scss']
 })
 export class ExperiencesComponent {
+  
+  public experiences: number[];
 
+  constructor() {
+    this.experiences = [];
+  }
+
+  addExperience(): void {
+    this.experiences.push(this.experiences.length);
+  }
+
+  removeExperience(): void {
+    this.experiences.pop();
+  }
 }

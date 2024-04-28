@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class SkillsComponent {
 
+  public skills: number[];
+
+  constructor() {
+    this.skills = [];
+  }
+
+  addSkill(): void {
+    this.skills.push(this.skills.length);
+  }
+
+  removeSkill(): void {
+    this.skills.pop();
+  }
 }
