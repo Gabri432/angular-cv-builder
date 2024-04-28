@@ -13,10 +13,10 @@
                 <app-input-bar [label]="''" [placeholder]="'Linkedin of John Smith'"></app-input-bar>
                 <app-input-bar [label]="''" [placeholder]="'Github of John Smith'"></app-input-bar>
             </div>
-            <app-education class="cv-section" id="education-section" draggable="true">Education goes here</app-education>
-            <app-experiences class="cv-section" id="experience-section" draggable="true">Experience goes here</app-experiences>
-            <app-skills class="cv-section" id="skills-section" draggable="true">Skills goes here</app-skills>
-            <app-extra class="cv-section" id="extra-section" draggable="true">Extra goes here</app-extra>
+            <app-education class="cv-section" id="education-section" draggable="true" (dataEvent)="receiveEducation($event)">Education goes here</app-education>
+            <app-experiences class="cv-section" id="experience-section" draggable="true" (dataEvent)="receiveExperiences($event)">Experience goes here</app-experiences>
+            <app-skills class="cv-section" id="skills-section" draggable="true" (dataEvent)="receiveSkills($event)">Skills goes here</app-skills>
+            <app-extra class="cv-section" id="extra-section" draggable="true" (dataEvent)="receiveExtra($event)">Extra goes here</app-extra>
         </div>
     </div>
 </div>

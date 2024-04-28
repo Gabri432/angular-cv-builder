@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class SkillsComponent {
 
   public skills: number[];
+  @Output() dataEvent = new EventEmitter<string>();
 
   constructor() {
     this.skills = [];
@@ -19,5 +20,9 @@ export class SkillsComponent {
 
   removeSkill(): void {
     this.skills.pop();
+  }
+
+  sendData(receivedMessage: string) {
+    this.dataEvent.emit(receivedMessage);
   }
 }

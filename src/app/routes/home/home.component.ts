@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   private draggables!: NodeListOf<HTMLElement>;
+  receivedEducation: string = "";
+  receivedExperiences: string = "";
+  receivedSkills: string = "";
+  receivedExtra: string = "";
 
     ngOnInit(): void {
       this.draggables = document.querySelectorAll('.cv-section');
@@ -46,6 +50,19 @@ export class HomeComponent implements OnInit {
           target.parentNode?.insertBefore(dragging, target);
         }
       }
+    }
+
+    receiveEducation(message: string) {
+      this.receivedEducation = message;
+    }
+    receiveExperiences(message: string) {
+      this.receivedExperiences = message;
+    }
+    receiveSkills(message: string) {
+      this.receivedSkills = message;
+    }
+    receiveExtra(message: string) {
+      this.receivedExtra = message;
     }
 
 }
