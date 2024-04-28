@@ -1,1 +1,12 @@
-<p>education works!</p>
+<div id="education-section">
+    <h2>Education</h2>
+    <app-input-bar [label]="'Institute'" [placeholder]="'University of Boston'"></app-input-bar>
+    <app-input-bar [label]="'Degree'" [placeholder]="'Master Degree in Civil Engineering'"></app-input-bar>
+    <div id="education-extra" *ngFor="let title of titles">
+        <br />
+        <app-input-bar [label]="'Institute'" [placeholder]="'University of Boston'"></app-input-bar>
+        <app-input-bar [label]="'Degree'" [placeholder]="'Master Degree in Civil Engineering'"></app-input-bar>
+    </div>
+    <button id="add-education" title="Add new degrees" (click)="addEducation()">+</button>
+    <button id="remove-education" title="Remove latest degree" (click)="removeEducation()" *ngIf="titles.length >= 1">x</button>
+</div>

@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class EducationComponent {
 
+  public titles: number[];
+
+  constructor() {
+    this.titles = [];
+  }
+
+  addEducation(): void {
+    this.titles.push(this.titles.length);
+  }
+
+  removeEducation(): void {
+    this.titles.pop();
+  }
+
 }
