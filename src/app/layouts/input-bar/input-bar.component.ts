@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-bar',
@@ -8,4 +8,9 @@ import { Component, Input } from '@angular/core';
 export class InputBarComponent {
   @Input() label: string = "Default Label";
   @Input() placeholder: string = "Default Placeholder";
+  @Output() dataEvent = new EventEmitter<string>();
+
+  sendData(data: Event) {
+    this.dataEvent.emit((data.target as HTMLInputElement).value);
+  }
 }

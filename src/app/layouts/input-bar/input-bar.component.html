@@ -1,5 +1,5 @@
 <div id="input-bar">
     <label for="{{label}}">{{label}}</label>
-    <input type="text" placeholder="{{placeholder}}" name="{{label}}">
+    <input type="text" placeholder="{{placeholder}}" name="{{label}}" (input)="sendData($event)">
     <br />
 </div>
