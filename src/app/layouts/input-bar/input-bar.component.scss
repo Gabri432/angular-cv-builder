@@ -1,0 +1,20 @@
+#input-bar {
+    padding-left: 20%;
+    label {
+        font-size: 24px;
+        font-weight: bold;
+        display: block;
+    }
+    input {
+        border: 1px solid black;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        font-size: 20px;
+        width: 60%;
+    }
+    input:hover, input:focus {
+        border-color: blue;
+    }
+}
