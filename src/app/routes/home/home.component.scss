@@ -7,11 +7,17 @@
 
     #cv {
         border: 1px solid grey;
-        border-radius: 2px;
+        border-radius: 5px;
         width: 70%;
         margin-left: 15%;
         min-height: 90vh;
         background-color: white;
         margin-bottom: 5vh;
+        box-shadow: 5px 5px grey;
+
+        #personal-details {
+            padding-top: 10px;
+        }
+
     }
 }

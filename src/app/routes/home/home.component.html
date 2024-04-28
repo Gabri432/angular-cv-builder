@@ -4,6 +4,15 @@
     </div>
     <div id="central-section">
         <div id="cv">
+            <div id="personal-details">
+                <h2>
+                    <app-input-bar [label]="''" [placeholder]="'John Smith'"></app-input-bar>
+                </h2>
+                <app-input-bar [label]="''" [placeholder]="'johnsmith@email.com'"></app-input-bar>
+                <app-input-bar [label]="''" [placeholder]="'Address of John Smith'"></app-input-bar>
+                <app-input-bar [label]="''" [placeholder]="'Linkedin of John Smith'"></app-input-bar>
+                <app-input-bar [label]="''" [placeholder]="'Github of John Smith'"></app-input-bar>
+            </div>
             <app-education class="cv-section" id="education-section" draggable="true">Education goes here</app-education>
             <app-experiences class="cv-section" id="experience-section" draggable="true">Experience goes here</app-experiences>
             <app-skills class="cv-section" id="skills-section" draggable="true">Skills goes here</app-skills>
