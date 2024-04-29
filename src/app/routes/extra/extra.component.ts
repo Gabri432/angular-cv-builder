@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-extra',
@@ -8,10 +8,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class ExtraComponent {
 
   public extras: number[];
-  @Output() dataEvent = new EventEmitter<string>();
+  public extrasMap = new Map<number, string>();
 
   constructor() {
-    this.extras = [];
+    this.extras = [0];
   }
 
   addExtras(): void {
@@ -20,9 +20,14 @@ export class ExtraComponent {
 
   removeExtra(): void {
     this.extras.pop();
+    this.extrasMap.delete(this.extras.length);
   }
 
-  sendData(receivedMessage: string) {
-    this.dataEvent.emit(receivedMessage);
+  sendData(receivedMessage: string, index: number) {
+    this.extrasMap.set(index, receivedMessage);
+  }
+
+  getExtra() {
+    return this.extrasMap;
   }
 }

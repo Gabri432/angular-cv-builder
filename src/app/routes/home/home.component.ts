@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EducationComponent } from '../education/education.component';
+import { SkillsComponent } from '../skills/skills.component';
+import { ExperiencesComponent } from '../experiences/experiences.component';
+import { ExtraComponent } from '../extra/extra.component';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +11,9 @@ import { EducationComponent } from '../education/education.component';
 })
 export class HomeComponent implements OnInit {
   @ViewChild(EducationComponent, { static: false }) educationComponent!: EducationComponent;
+  @ViewChild(SkillsComponent, { static: false }) skillsComponent!: SkillsComponent;
+  @ViewChild(ExperiencesComponent, { static: false}) experiencesComponent!: ExperiencesComponent;
+  @ViewChild(ExtraComponent, { static: false }) extraComponent!: ExtraComponent;
   private draggables!: NodeListOf<HTMLElement>;
   receivedEducation: string = "";
   receivedExperiences: string = "";
@@ -53,18 +59,12 @@ export class HomeComponent implements OnInit {
         }
       }
     }
-    receiveExperiences(message: string) {
-      this.receivedExperiences = message;
-    }
-    receiveSkills(message: string) {
-      this.receivedSkills = message;
-    }
-    receiveExtra(message: string) {
-      this.receivedExtra = message;
-    }
 
     download() {
       console.log(this.educationComponent.getInstitutes(), this.educationComponent.getDegrees());
+      console.log(this.skillsComponent.getNames(), this.skillsComponent.getLevels());
+      console.log(this.experiencesComponent.getJobs(), this.experiencesComponent.getDescriptions(), this.experiencesComponent.getPeriods());
+      console.log(this.extraComponent.getExtra());
     }
 
 }

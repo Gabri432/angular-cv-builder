@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -8,10 +8,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SkillsComponent {
 
   public skills: number[];
-  @Output() dataEvent = new EventEmitter<string>();
+  public namesMap = new Map<number, string>();
+  public levelsMap = new Map<number, string>();
 
   constructor() {
-    this.skills = [];
+    this.skills  = [0];
   }
 
   addSkill(): void {
@@ -20,9 +21,20 @@ export class SkillsComponent {
 
   removeSkill(): void {
     this.skills.pop();
+    this.namesMap.delete(this.skills.length);
+    this.levelsMap.delete(this.skills.length);
   }
 
-  sendData(receivedMessage: string) {
-    this.dataEvent.emit(receivedMessage);
+  sendData(receivedMessage: string, index: number, type: string) {
+    if (type == 'name') this.namesMap.set(index, receivedMessage);
+    if (type == 'level') this.levelsMap.set(index, receivedMessage);
+  }
+
+  getNames() {
+    return this.namesMap;
+  }
+
+  getLevels() {
+    return this.levelsMap;
   }
 }

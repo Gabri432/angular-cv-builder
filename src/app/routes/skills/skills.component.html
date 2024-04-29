@@ -1,11 +1,9 @@
 <div id="skills-section">
     <h2>Skills</h2>
-    <app-input-bar [label]="'Name'" [placeholder]="'Programming in Java'" (dataEvent)="sendData($event)"></app-input-bar>
-    <app-input-bar [label]="'Level'" [placeholder]="'Confident/High/Basic'" (dataEvent)="sendData($event)"></app-input-bar>
     <div id="skills-extra" *ngFor="let skill of skills">
         <br />
-        <app-input-bar [label]="'Name'" [placeholder]="'Programming in Java'" (dataEvent)="sendData($event)"></app-input-bar>
-        <app-input-bar [label]="'Level'" [placeholder]="'Confident'" (dataEvent)="sendData($event)"></app-input-bar>
+        <app-input-bar [label]="'Name'" [placeholder]="'Programming in Java'" (dataEvent)="sendData($event, skill, 'name')"></app-input-bar>
+        <app-input-bar [label]="'Level'" [placeholder]="'Confident'" (dataEvent)="sendData($event, skill, 'level')"></app-input-bar>
     </div>
     <button id="add-skills" title="Add new skill" (click)="addSkill()">+</button>
     <button id="remove-skills" title="Remove latest skill" (click)="removeSkill()" *ngIf="skills.length >= 1">x</button>
