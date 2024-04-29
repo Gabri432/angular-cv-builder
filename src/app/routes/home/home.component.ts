@@ -53,10 +53,6 @@ export class HomeComponent implements OnInit {
         }
       }
     }
-
-    receiveEducation(message: string) {
-      this.receivedEducation = message;
-    }
     receiveExperiences(message: string) {
       this.receivedExperiences = message;
     }
