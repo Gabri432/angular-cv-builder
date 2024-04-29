@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-education',
@@ -8,10 +8,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class EducationComponent {
 
   public titles: number[];
-  @Output() dataEvent = new EventEmitter<string>();
+  public instituteMap = new Map<number, string>();
+  public degreeMap = new Map<number, string>();
 
   constructor() {
-    this.titles = [];
+    this.titles  = [0];
   }
 
   addEducation(): void {
@@ -20,10 +21,21 @@ export class EducationComponent {
 
   removeEducation(): void {
     this.titles.pop();
+    this.instituteMap.delete(this.titles.length);
+    this.degreeMap.delete(this.titles.length);
   }
 
-  sendData(receivedMessage: string) {
-    this.dataEvent.emit(receivedMessage);
+  sendData(receivedMessage: string, index: number, type: string) {
+    if (type == 'institute') this.instituteMap.set(index, receivedMessage);
+    if (type == 'degree') this.degreeMap.set(index, receivedMessage);
+  }
+
+  getInstitutes() {
+    return this.instituteMap;
+  }
+
+  getDegrees() {
+    return this.degreeMap;
   }
 
 }

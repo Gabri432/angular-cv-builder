@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EducationComponent } from '../education/education.component';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(EducationComponent, { static: false }) educationComponent!: EducationComponent;
   private draggables!: NodeListOf<HTMLElement>;
   receivedEducation: string = "";
   receivedExperiences: string = "";
@@ -63,6 +65,10 @@ export class HomeComponent implements OnInit {
     }
     receiveExtra(message: string) {
       this.receivedExtra = message;
+    }
+
+    download() {
+      console.log(this.educationComponent.getInstitutes(), this.educationComponent.getDegrees());
     }
 
 }
