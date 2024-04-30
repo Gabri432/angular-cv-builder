@@ -1,0 +1,55 @@
+<div id="preview">
+    <div id="personal-section">
+        {{this.userCv.personalDetails.name}}
+        <br />
+        {{this.userCv.personalDetails.email}}
+        <br />
+        {{this.userCv.personalDetails.address}}
+        <br />
+        {{this.userCv.personalDetails.linkedin}}
+        <br />
+        {{this.userCv.personalDetails.github}}
+    </div>
+    <hr>
+    <div id="education-section">
+        <h3>Education</h3>
+        {{this.userCv.educationDetails}}
+        <table>
+            <tr>
+                <th>Institute</th>
+                <th>Degree</th>
+            </tr>
+            <tr *ngFor=" let i of educationListSize;">
+                <td>{{this.userCv.educationDetails.listOfInstitutes[i]}}</td>
+                <td>{{this.userCv.educationDetails.listOfDegrees[i]}}</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div id="experience-section">
+        <h3>Working Experiences</h3>
+        <table>
+        <tr>
+            <th>Company</th>
+            <th>Description</th>
+            <th>Period</th>
+          </tr>
+        <tr *ngFor="
+            let i of experienceListSize;">
+            <td>{{this.userCv.experienceDetails.listOfJobs[i]}}</td>
+            <td>{{this.userCv.experienceDetails.listOfJobDescriptions[i]}}</td>
+            <td>{{this.userCv.experienceDetails.listOfJobPeriods[i]}}</td> 
+        </tr>
+        </table>
+    </div>
+    <hr>
+    <div id="skills-section">
+        <h3>Skills</h3>
+        {{this.userCv.skillDetails}}
+    </div>
+    <hr>
+    <div id="extra-section">
+        <h3>Extras</h3>
+        {{this.userCv.listOfExtras}}
+    </div>
+</div>
