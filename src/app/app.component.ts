@@ -8,5 +8,6 @@ import { PreviewerService } from './services/previewer.service';
 })
 export class AppComponent {
   title = 'angular-cv-builder';
-  modePreview = (new PreviewerService).modePreviewOn;
+  constructor (public previewerService: PreviewerService) {}
+  modePreview = this.previewerService.modePreviewOn;
 }
