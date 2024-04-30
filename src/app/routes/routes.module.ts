@@ -6,6 +6,8 @@ import { ExperiencesComponent } from './experiences/experiences.component';
 import { EducationComponent } from './education/education.component';
 import { ExtraComponent } from './extra/extra.component';
 import { LayoutsModule } from '../layouts/layouts.module';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { PreviewComponent } from './preview/preview.component';
 
 
 
@@ -15,7 +17,9 @@ import { LayoutsModule } from '../layouts/layouts.module';
     SkillsComponent,
     ExperiencesComponent,
     EducationComponent,
-    ExtraComponent
+    ExtraComponent,
+    PersonalDetailsComponent,
+    PreviewComponent
   ],
   exports: [],
   imports: [
