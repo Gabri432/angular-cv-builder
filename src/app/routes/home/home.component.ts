@@ -4,6 +4,7 @@ import { SkillsComponent } from '../skills/skills.component';
 import { ExperiencesComponent } from '../experiences/experiences.component';
 import { ExtraComponent } from '../extra/extra.component';
 import { GenerateCVService } from 'src/app/services/generate-cv.service';
+import { PersonalDetailsComponent } from '../personal-details/personal-details.component';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(SkillsComponent, { static: false }) skillsComponent!: SkillsComponent;
   @ViewChild(ExperiencesComponent, { static: false}) experiencesComponent!: ExperiencesComponent;
   @ViewChild(ExtraComponent, { static: false }) extraComponent!: ExtraComponent;
+  @ViewChild(PersonalDetailsComponent,{ static: false}) personalComponent!: PersonalDetailsComponent;
   private draggables!: NodeListOf<HTMLElement>;
   receivedEducation: string = "";
   receivedExperiences: string = "";
@@ -72,7 +74,9 @@ export class HomeComponent implements OnInit {
         this.experiencesComponent.getJobDetailList('description'),
         this.experiencesComponent.getJobDetailList('period')
       );
-      myService.updatePersonalDetails([""]);
+      myService.updatePersonalDetails(
+        this.personalComponent.getPersonalDetails()
+      );
       myService.updateSkillDetails(
         this.skillsComponent.getskillDetailList('names'),
         this.skillsComponent.getskillDetailList('levels')
