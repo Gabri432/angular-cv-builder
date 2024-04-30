@@ -3,6 +3,7 @@ import { EducationComponent } from '../education/education.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { ExperiencesComponent } from '../experiences/experiences.component';
 import { ExtraComponent } from '../extra/extra.component';
+import { GenerateCVService } from 'src/app/services/generate-cv.service';
 
 @Component({
   selector: 'app-home',
@@ -61,10 +62,22 @@ export class HomeComponent implements OnInit {
     }
 
     download() {
-      console.log(this.educationComponent.getInstitutes(), this.educationComponent.getDegrees());
-      console.log(this.skillsComponent.getNames(), this.skillsComponent.getLevels());
-      console.log(this.experiencesComponent.getJobs(), this.experiencesComponent.getDescriptions(), this.experiencesComponent.getPeriods());
-      console.log(this.extraComponent.getExtra());
+      const myService = new GenerateCVService;
+      myService.updateEducationDetails(
+        this.educationComponent.getEducationDetailList('institutes'), 
+        this.educationComponent.getEducationDetailList('degrees')
+      );
+      myService.updateExperienceDetails(
+        this.experiencesComponent.getJobDetailList('title'), 
+        this.experiencesComponent.getJobDetailList('description'),
+        this.experiencesComponent.getJobDetailList('period')
+      );
+      myService.updatePersonalDetails([""]);
+      myService.updateSkillDetails(
+        this.skillsComponent.getskillDetailList('names'),
+        this.skillsComponent.getskillDetailList('levels')
+      )
+      console.log(myService.generateCv(this.extraComponent.getExtra()));
     }
 
 }

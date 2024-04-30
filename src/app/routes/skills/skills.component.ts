@@ -30,11 +30,14 @@ export class SkillsComponent {
     if (type == 'level') this.levelsMap.set(index, receivedMessage);
   }
 
-  getNames() {
-    return this.namesMap;
-  }
-
-  getLevels() {
-    return this.levelsMap;
+  getskillDetailList(type: 'names' | 'levels') {
+    let skillDetailList: string[] = []; 
+    let chosenMap = new Map<number, string>();
+    if (type == 'names') chosenMap = this.namesMap;
+    if (type == 'levels') chosenMap = this.levelsMap;
+    for (let i = 0; i<chosenMap.size; i++) {
+      skillDetailList.push(chosenMap.get(i)!);
+    }
+    return skillDetailList;
   }
 }

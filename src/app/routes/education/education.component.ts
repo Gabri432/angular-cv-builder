@@ -30,12 +30,15 @@ export class EducationComponent {
     if (type == 'degree') this.degreeMap.set(index, receivedMessage);
   }
 
-  getInstitutes() {
-    return this.instituteMap;
-  }
-
-  getDegrees() {
-    return this.degreeMap;
+  getEducationDetailList(type: 'institutes' | 'degrees') {
+    let educationDetailList: string[] = []; 
+    let chosenMap = new Map<number, string>();
+    if (type == 'institutes') chosenMap = this.instituteMap;
+    if (type == 'degrees') chosenMap = this.degreeMap;
+    for (let i = 0; i<chosenMap.size; i++) {
+      educationDetailList.push(chosenMap.get(i)!);
+    }
+    return educationDetailList;
   }
 
 }

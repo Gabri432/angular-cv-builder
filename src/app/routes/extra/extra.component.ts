@@ -28,6 +28,12 @@ export class ExtraComponent {
   }
 
   getExtra() {
-    return this.extrasMap;
+    let extraList: string[] = [];
+    for (let i = 0; i<this.extrasMap.size; i++) {
+      extraList.push(this.extrasMap.get(i)!);
+    }
+    return extraList;
   }
+
+  
 }

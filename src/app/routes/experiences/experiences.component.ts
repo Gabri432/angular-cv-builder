@@ -33,15 +33,15 @@ export class ExperiencesComponent {
     if (type == 'period') this.periodsMap.set(index, receivedMessage);
   }
 
-  getJobs() {
-    return this.jobsMap;
-  }
-
-  getDescriptions() {
-    return this.descriptionsMap;
-  }
-
-  getPeriods() {
-    return this.periodsMap;
+  getJobDetailList(type: 'title' | 'description' | 'period') {
+    let experienceDetailList: string[] = []; 
+    let chosenMap = new Map<number, string>();
+    if (type == 'title') chosenMap = this.jobsMap;
+    if (type == 'description') chosenMap = this.descriptionsMap;
+    if (type == 'period') chosenMap = this.periodsMap;
+    for (let i = 0; i<chosenMap.size; i++) {
+      experienceDetailList.push(chosenMap.get(i)!);
+    }
+    return experienceDetailList;
   }
 }
