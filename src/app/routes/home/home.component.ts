@@ -5,6 +5,7 @@ import { ExperiencesComponent } from '../experiences/experiences.component';
 import { ExtraComponent } from '../extra/extra.component';
 import { GenerateCVService } from 'src/app/services/generate-cv.service';
 import { PersonalDetailsComponent } from '../personal-details/personal-details.component';
+import { PreviewerService } from 'src/app/services/previewer.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,10 @@ export class HomeComponent implements OnInit {
   receivedSkills: string = "";
   receivedExtra: string = "";
 
+  constructor (private previewerService: PreviewerService) {}
+
     ngOnInit(): void {
+      (document.querySelector("app-preview")! as HTMLElement).style.display = "none";
       this.draggables = document.querySelectorAll('.cv-section');
       this.init();
     }
@@ -82,6 +86,20 @@ export class HomeComponent implements OnInit {
         this.skillsComponent.getskillDetailList('levels')
       )
       console.log(myService.generateCv(this.extraComponent.getExtra()));
+      this.previewerService.activatePreview();
+      console.log(this.previewerService.modePreviewOn);
+      if (this.previewerService.modePreviewOn) {
+        document.getElementById("cv")!.style.display = 'none';
+        document.getElementById("title-section")!.style.display = 'none';
+        (document.querySelector("app-preview")! as HTMLElement).style.display = "block";
+        document.body.addEventListener( "click", 
+        event => {
+          console.log("Hello");
+          this.previewerService.activatePreview();
+          console.log(this.previewerService.modePreviewOn);
+        }, 
+        false);
+      }
     }
 
 }
