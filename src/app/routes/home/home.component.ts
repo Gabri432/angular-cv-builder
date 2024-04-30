@@ -6,6 +6,7 @@ import { ExtraComponent } from '../extra/extra.component';
 import { GenerateCVService } from 'src/app/services/generate-cv.service';
 import { PersonalDetailsComponent } from '../personal-details/personal-details.component';
 import { PreviewerService } from 'src/app/services/previewer.service';
+import { Cv } from 'src/app/models/cv';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +19,21 @@ export class HomeComponent implements OnInit {
   @ViewChild(ExperiencesComponent, { static: false}) experiencesComponent!: ExperiencesComponent;
   @ViewChild(ExtraComponent, { static: false }) extraComponent!: ExtraComponent;
   @ViewChild(PersonalDetailsComponent,{ static: false}) personalComponent!: PersonalDetailsComponent;
+
+
   private draggables!: NodeListOf<HTMLElement>;
   receivedEducation: string = "";
   receivedExperiences: string = "";
   receivedSkills: string = "";
   receivedExtra: string = "";
+
+  userCv: Cv = {
+    personalDetails: {address: "", name: "", email: ""},
+    educationDetails: {listOfInstitutes: [], listOfDegrees: []},
+    experienceDetails: {listOfJobs: [], listOfJobDescriptions: [], listOfJobPeriods: []},
+    skillDetails: {listOfSkillNames: [],  listOfSkillLevels: []},
+    listOfExtras: []
+  };
 
   constructor (private previewerService: PreviewerService) {}
 
@@ -85,11 +96,12 @@ export class HomeComponent implements OnInit {
         this.skillsComponent.getskillDetailList('names'),
         this.skillsComponent.getskillDetailList('levels')
       )
-      console.log(myService.generateCv(this.extraComponent.getExtra()));
+      this.userCv = myService.generateCv(this.extraComponent.getExtra());
       this.previewerService.activatePreview();
       if (this.previewerService.modePreviewOn) {
         document.getElementById("cv")!.style.display = 'none';
         document.getElementById("title-section")!.style.display = 'none';
+        document.getElementById("download-button")!.style.display = 'none';
         (document.querySelector("app-preview")! as HTMLElement).style.display = "block";
       }
     }
@@ -101,6 +113,7 @@ export class HomeComponent implements OnInit {
     }
     document.getElementById("cv")!.style.display = 'block';
     document.getElementById("title-section")!.style.display = 'block';
+    document.getElementById("download-button")!.style.display = 'block';
     (document.querySelector("app-preview")! as HTMLElement).style.display = "none";
   }
 
