@@ -87,7 +87,6 @@ export class HomeComponent implements OnInit {
       )
       console.log(myService.generateCv(this.extraComponent.getExtra()));
       this.previewerService.activatePreview();
-      console.log(this.previewerService.modePreviewOn);
       if (this.previewerService.modePreviewOn) {
         document.getElementById("cv")!.style.display = 'none';
         document.getElementById("title-section")!.style.display = 'none';
