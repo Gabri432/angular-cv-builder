@@ -10,7 +10,8 @@ export class PreviewerService {
   modePreviewOn: boolean = false;
 
   activatePreview() {
-    if (this.modePreviewOn) this.modePreviewOn = false;
-    if (!this.modePreviewOn) this.modePreviewOn = true;
+    if (this.modePreviewOn) {
+      this.modePreviewOn = false;
+    } else this.modePreviewOn = true;
   }
 }
