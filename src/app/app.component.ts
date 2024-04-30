@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PreviewerService } from './services/previewer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-cv-builder';
+  modePreview = (new PreviewerService).modePreviewOn;
 }
