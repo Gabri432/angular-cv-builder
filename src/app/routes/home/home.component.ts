@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { EducationComponent } from '../education/education.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { ExperiencesComponent } from '../experiences/experiences.component';
@@ -92,14 +92,17 @@ export class HomeComponent implements OnInit {
         document.getElementById("cv")!.style.display = 'none';
         document.getElementById("title-section")!.style.display = 'none';
         (document.querySelector("app-preview")! as HTMLElement).style.display = "block";
-        document.body.addEventListener( "click", 
-        event => {
-          console.log("Hello");
-          this.previewerService.activatePreview();
-          console.log(this.previewerService.modePreviewOn);
-        }, 
-        false);
       }
     }
+
+  @HostListener('window:afterprint')
+  onAfterPrint() {
+    if (this.previewerService.modePreviewOn) {
+      this.previewerService.activatePreview();
+    }
+    document.getElementById("cv")!.style.display = 'block';
+    document.getElementById("title-section")!.style.display = 'block';
+    (document.querySelector("app-preview")! as HTMLElement).style.display = "none";
+  }
 
 }
