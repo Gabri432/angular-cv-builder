@@ -117,4 +117,8 @@ export class HomeComponent implements OnInit {
     (document.querySelector("app-preview")! as HTMLElement).style.display = "none";
   }
 
+  closePreview() {
+    this.onAfterPrint();
+  }
+
 }

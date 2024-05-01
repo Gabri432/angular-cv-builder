@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { Cv } from 'src/app/models/cv';
 
 @Component({
@@ -14,6 +14,7 @@ export class PreviewComponent {
     skillDetails: {listOfSkillNames: [],  listOfSkillLevels: []},
     listOfExtras: []
   };
+  @Output() goBack = new EventEmitter<boolean>();
 
   educationListSize: number[] = [];
   experienceListSize: number[] = [];
@@ -31,6 +32,20 @@ export class PreviewComponent {
         this.skillListSize.push(i)
       }
     }
+  }
+
+  download() {
+    const preview = document.getElementById('preview') as HTMLElement;
+    const printWindow = window.open('', '_blank')!;
+    printWindow.document.write('<html><head><title>User Cv</title></head><body>');
+    printWindow.document.write(preview.innerHTML);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    printWindow.print();
+  }
+
+  back(exitEvent: Event) {
+    this.goBack.emit(true);
   }
 
 }

@@ -2,12 +2,13 @@
     margin-top: -5vh;
     border: 1px solid grey;
     border-radius: 5px;
-    width: 70%;
+    width: 68%;
     margin-left: 15%;
-    height: 85vh;
+    min-height: 85vh;
     background-color: white;
     margin-bottom: 5vh;
     box-shadow: 5px 5px grey;
+    padding: 1%;
 
     #personal-section {
         text-align: center;
@@ -17,4 +18,17 @@
         width: 70%;
         margin-left: 15%;
     }
+    #education-section {
+        background-color: green;
+    }
+    #skills-section {
+        background-color: orange;
+    }
+    #experience-section {
+        background-color: yellow;
+    }
+}
+#download-button {
+    margin-left: 20%;
+    margin-bottom: 10px;
 }

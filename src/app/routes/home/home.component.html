@@ -12,5 +12,5 @@
         </div>
         <button id="download-button" (click)="download()">Preview CV</button>
     </div>
-    <app-preview [userCv]="this.userCv"></app-preview>
+    <app-preview [userCv]="this.userCv" (goBack)="closePreview()"></app-preview>
 </div>

@@ -13,7 +13,6 @@
     <hr>
     <div id="education-section">
         <h3>Education</h3>
-        {{this.userCv.educationDetails}}
         <table>
             <tr>
                 <th>Institute</th>
@@ -45,11 +44,27 @@
     <hr>
     <div id="skills-section">
         <h3>Skills</h3>
-        {{this.userCv.skillDetails}}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Level</th>
+            </tr>
+            <tr *ngFor=" let i of skillListSize;">
+                <td>{{this.userCv.skillDetails.listOfSkillNames[i]}}</td>
+                <td>{{this.userCv.skillDetails.listOfSkillLevels[i]}}</td>
+            </tr>
+        </table>
     </div>
     <hr>
     <div id="extra-section">
         <h3>Extras</h3>
+        <table>
+            <tr *ngFor=" let extra of this.userCv.listOfExtras;">
+                <td>{{extra}}</td>
+            </tr>
+        </table>
         {{this.userCv.listOfExtras}}
     </div>
 </div>
+<button id="download-button" (click)="download()">Download CV</button>
+<button id="back-button" (click)="back($event)">Back</button>
