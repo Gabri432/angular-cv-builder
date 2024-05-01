@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Cv } from 'src/app/models/cv';
 
 @Component({
@@ -6,7 +6,7 @@ import { Cv } from 'src/app/models/cv';
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.scss']
 })
-export class PreviewComponent {
+export class PreviewComponent implements OnChanges {
   @Input() userCv: Cv = {
     personalDetails: {address: "", name: "", email: "", linkedin: "", github: ""},
     educationDetails: {listOfInstitutes: [], listOfDegrees: []},
@@ -21,16 +21,17 @@ export class PreviewComponent {
   skillListSize: number[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['userCv']) {
-      for (let i = 0; i < this.userCv.educationDetails.listOfDegrees.length; i++) {
-        this.educationListSize.push(i)
-      }
-      for (let i = 0; i < this.userCv.experienceDetails.listOfJobs.length; i++) {
-        this.experienceListSize.push(i)
-      }
-      for (let i = 0; i < this.userCv.skillDetails.listOfSkillNames.length; i++) {
-        this.skillListSize.push(i)
-      }
+    this.educationListSize = [];
+    this.experienceListSize = [];
+    this.skillListSize = [];
+    for (let i = 0; i < this.userCv.educationDetails.listOfDegrees.length; i++) {
+      this.educationListSize.push(i)
+    }
+    for (let i = 0; i < this.userCv.experienceDetails.listOfJobs.length; i++) {
+      this.experienceListSize.push(i)
+    }
+    for (let i = 0; i < this.userCv.skillDetails.listOfSkillNames.length; i++) {
+      this.skillListSize.push(i)
     }
   }
 

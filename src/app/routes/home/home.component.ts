@@ -119,6 +119,13 @@ export class HomeComponent implements OnInit {
 
   closePreview() {
     this.onAfterPrint();
+    this.userCv = {
+      personalDetails: {address: "", name: "", email: ""},
+      educationDetails: {listOfInstitutes: [], listOfDegrees: []},
+      experienceDetails: {listOfJobs: [], listOfJobDescriptions: [], listOfJobPeriods: []},
+      skillDetails: {listOfSkillNames: [],  listOfSkillLevels: []},
+      listOfExtras: []
+    };
   }
 
 }
