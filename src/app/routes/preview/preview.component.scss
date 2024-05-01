@@ -23,6 +23,16 @@
     margin-left: 20%;
     margin-bottom: 10px;
 }
+table {
+    width: 100%;
+}
+td:nth-child(1) {
+    padding-left: 20px;
+}
+td:nth-child(2) {
+    text-align: right;
+    padding-right: 20px;
+}
 
 @media only screen and (max-width: 899px) {
     #preview {
@@ -47,5 +57,15 @@
     hr {
         width: 70%;
         margin-left: 15%;
+    }
+    table {
+        width: 100%;
+    }
+    td:nth-child(1) {
+        padding-left: 20px;
+    }
+    td:nth-child(2) {
+        text-align: right;
+        padding-right: 20px;
     }
 }
