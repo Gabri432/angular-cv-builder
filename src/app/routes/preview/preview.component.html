@@ -1,6 +1,6 @@
 <div id="preview">
     <div id="personal-section">
-        {{this.userCv.personalDetails.name}}
+        <b>{{this.userCv.personalDetails.name}}</b>
         <br />
         {{this.userCv.personalDetails.email}}
         <br />
@@ -14,12 +14,8 @@
     <div id="education-section">
         <h3>Education</h3>
         <table>
-            <tr>
-                <th>Institute</th>
-                <th>Degree</th>
-            </tr>
             <tr *ngFor=" let i of educationListSize;">
-                <td>{{this.userCv.educationDetails.listOfInstitutes[i]}}</td>
+                <td><b>{{this.userCv.educationDetails.listOfInstitutes[i]}}</b></td>
                 <td>{{this.userCv.educationDetails.listOfDegrees[i]}}</td>
             </tr>
         </table>
@@ -28,16 +24,14 @@
     <div id="experience-section">
         <h3>Working Experiences</h3>
         <table>
-        <tr>
-            <th>Company</th>
-            <th>Description</th>
-            <th>Period</th>
-          </tr>
         <tr *ngFor="
             let i of experienceListSize;">
-            <td>{{this.userCv.experienceDetails.listOfJobs[i]}}</td>
-            <td>{{this.userCv.experienceDetails.listOfJobDescriptions[i]}}</td>
-            <td>{{this.userCv.experienceDetails.listOfJobPeriods[i]}}</td> 
+            <td>
+                <b>{{this.userCv.experienceDetails.listOfJobs[i]}}</b>
+                <br />
+                {{this.userCv.experienceDetails.listOfJobPeriods[i]}}
+            </td>
+            <td>{{this.userCv.experienceDetails.listOfJobDescriptions[i]}}</td> 
         </tr>
         </table>
     </div>
@@ -45,12 +39,8 @@
     <div id="skills-section">
         <h3>Skills</h3>
         <table>
-            <tr>
-                <th>Name</th>
-                <th>Level</th>
-            </tr>
             <tr *ngFor=" let i of skillListSize;">
-                <td>{{this.userCv.skillDetails.listOfSkillNames[i]}}</td>
+                <td><b>{{this.userCv.skillDetails.listOfSkillNames[i]}}</b></td>
                 <td>{{this.userCv.skillDetails.listOfSkillLevels[i]}}</td>
             </tr>
         </table>
@@ -63,7 +53,6 @@
                 <td>{{extra}}</td>
             </tr>
         </table>
-        {{this.userCv.listOfExtras}}
     </div>
 </div>
 <button id="download-button" (click)="download()">Download CV</button>

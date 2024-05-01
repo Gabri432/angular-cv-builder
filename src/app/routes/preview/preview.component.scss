@@ -18,15 +18,6 @@
         width: 70%;
         margin-left: 15%;
     }
-    #education-section {
-        background-color: green;
-    }
-    #skills-section {
-        background-color: orange;
-    }
-    #experience-section {
-        background-color: yellow;
-    }
 }
 #download-button {
     margin-left: 20%;
@@ -44,5 +35,17 @@
     #preview {
         width: 88%;
         margin-left: 5%;
+    }
+}
+
+@media print {
+    
+    #personal-section {
+        text-align: center;
+    }
+    
+    hr {
+        width: 70%;
+        margin-left: 15%;
     }
 }

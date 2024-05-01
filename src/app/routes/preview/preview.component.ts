@@ -38,7 +38,9 @@ export class PreviewComponent implements OnChanges {
   download() {
     const preview = document.getElementById('preview') as HTMLElement;
     const printWindow = window.open('', '_blank')!;
-    printWindow.document.write('<html><head><title>User Cv</title></head><body>');
+    printWindow.document.write('<html><head><title>User Cv</title></head>');
+    printWindow.document.write('<style>@media print { #personal-section { text-align: center;}}');
+    printWindow.document.write('</style><body>');
     printWindow.document.write(preview.innerHTML);
     printWindow.document.write('</body></html>');
     printWindow.document.close();
