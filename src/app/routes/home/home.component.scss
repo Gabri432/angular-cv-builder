@@ -8,8 +8,8 @@
     #cv {
         border: 1px solid grey;
         border-radius: 5px;
-        width: 70%;
-        margin-left: 15%;
+        width: 60%;
+        margin-left: 20%;
         min-height: 90vh;
         background-color: white;
         margin-bottom: 5vh;
@@ -19,5 +19,23 @@
     #download-button {
         margin-left: 20%;
         margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    #home {
+        #cv {
+            width: 70%;
+            margin-left: 15%;
+        }
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    #home {
+        #cv {
+            width: 90%;
+            margin-left: 5%;
+        }
     }
 }

@@ -2,8 +2,8 @@
     margin-top: -5vh;
     border: 1px solid grey;
     border-radius: 5px;
-    width: 68%;
-    margin-left: 15%;
+    width: 58%;
+    margin-left: 20%;
     min-height: 85vh;
     background-color: white;
     margin-bottom: 5vh;
@@ -31,4 +31,18 @@
 #download-button {
     margin-left: 20%;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 899px) {
+    #preview {
+        width: 68%;
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    #preview {
+        width: 88%;
+        margin-left: 5%;
+    }
 }
