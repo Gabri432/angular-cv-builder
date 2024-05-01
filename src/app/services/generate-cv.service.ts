@@ -21,7 +21,9 @@ export class GenerateCVService {
     newCv.personalDetails = {
       name: personalDetails[0],
       address: personalDetails[1],
-      email: personalDetails[2]
+      email: personalDetails[2],
+      linkedin: personalDetails[3],
+      github: personalDetails[4]
     }
   }
 
