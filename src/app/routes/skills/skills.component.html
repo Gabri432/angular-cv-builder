@@ -6,5 +6,5 @@
         <app-input-bar [label]="'Level'" [placeholder]="'Confident'" (dataEvent)="sendData($event, skill, 'level')"></app-input-bar>
     </div>
     <button id="add-skills" title="Add new skill" (click)="addSkill()">+</button>
-    <button id="remove-skills" title="Remove latest skill" (click)="removeSkill()" *ngIf="skills.length >= 1">x</button>
+    <button id="remove-skills" title="Remove latest skill" (click)="removeSkill()" *ngIf="skills.length > 1">x</button>
 </div>

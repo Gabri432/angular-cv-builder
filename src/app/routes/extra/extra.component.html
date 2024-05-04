@@ -5,5 +5,5 @@
         <app-input-bar [label]="''" [placeholder]="'I like playing chess'" (dataEvent)="sendData($event, extra)"></app-input-bar>
     </div>
     <button id="add-extras" title="Add new extra detail" (click)="addExtras()">+</button>
-    <button id="remove-extras" title="Remove latest detail" (click)="removeExtra()" *ngIf="extras.length >= 1">x</button>
+    <button id="remove-extras" title="Remove latest detail" (click)="removeExtra()" *ngIf="extras.length > 1">x</button>
 </div>

@@ -6,5 +6,5 @@
         <app-input-bar [label]="'Degree'" [placeholder]="'Master Degree in Civil Engineering'" (dataEvent)="sendData($event, title, 'degree')"></app-input-bar>
     </div>
     <button id="add-education" title="Add new degrees" (click)="addEducation()">+</button>
-    <button id="remove-education" title="Remove latest degree" (click)="removeEducation()" *ngIf="titles.length >= 1">x</button>
+    <button id="remove-education" title="Remove latest degree" (click)="removeEducation()" *ngIf="titles.length > 1">x</button>
 </div>

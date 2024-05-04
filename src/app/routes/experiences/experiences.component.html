@@ -7,5 +7,5 @@
         <app-input-bar [label]="'Period'" [placeholder]="'March 2017 to June 2021'" (dataEvent)="sendData($event, experience, 'period')"></app-input-bar>
     </div>
     <button id="add-experiences" title="Add new experience" (click)="addExperience()">+</button>
-    <button id="remove-experiences" title="Remove latest experience" (click)="removeExperience()" *ngIf="experiences.length >= 1">x</button>
+    <button id="remove-experiences" title="Remove latest experience" (click)="removeExperience()" *ngIf="experiences.length > 1">x</button>
 </div>
