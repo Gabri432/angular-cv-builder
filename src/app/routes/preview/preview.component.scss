@@ -9,6 +9,7 @@
     margin-bottom: 5vh;
     box-shadow: 5px 5px grey;
     padding: 1%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
     #personal-section {
         text-align: center;
@@ -49,6 +50,9 @@ td:nth-child(2) {
 }
 
 @media print {
+    #preview {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
     
     #personal-section {
         text-align: center;
