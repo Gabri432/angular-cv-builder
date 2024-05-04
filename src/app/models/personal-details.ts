@@ -3,7 +3,7 @@ export interface PersonalDetails {
     address: string;
     email: string;
     linkedin?: string;
-    github?: string;
+    website?: string;
     phoneNumber?: string;
     shortDescription?: string;
 }
