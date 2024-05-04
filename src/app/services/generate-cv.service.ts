@@ -22,8 +22,10 @@ export class GenerateCVService {
       name: personalDetails[0],
       address: personalDetails[1],
       email: personalDetails[2],
-      linkedin: personalDetails[3],
-      github: personalDetails[4]
+      phoneNumber: personalDetails[3],
+      linkedin: personalDetails[4],
+      github: personalDetails[5],
+      shortDescription: personalDetails[6],
     }
   }
 

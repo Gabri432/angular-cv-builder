@@ -8,7 +8,7 @@ import { Cv } from 'src/app/models/cv';
 })
 export class PreviewComponent implements OnChanges {
   @Input() userCv: Cv = {
-    personalDetails: {address: "", name: "", email: "", linkedin: "", github: ""},
+    personalDetails: {address: "", name: "", email: "", linkedin: "", github: "", phoneNumber: ""},
     educationDetails: {listOfInstitutes: [], listOfDegrees: []},
     experienceDetails: {listOfJobs: [], listOfJobDescriptions: [], listOfJobPeriods: []},
     skillDetails: {listOfSkillNames: [],  listOfSkillLevels: []},

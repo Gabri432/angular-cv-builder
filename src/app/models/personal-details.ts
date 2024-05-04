@@ -4,4 +4,6 @@ export interface PersonalDetails {
     email: string;
     linkedin?: string;
     github?: string;
+    phoneNumber?: string;
+    shortDescription?: string;
 }
