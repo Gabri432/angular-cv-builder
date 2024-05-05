@@ -20,8 +20,8 @@ export class GenerateCVService {
   updatePersonalDetails(personalDetails: string[]): void {
     newCv.personalDetails = {
       name: personalDetails[0],
-      address: personalDetails[1],
-      email: personalDetails[2],
+      email: personalDetails[1],
+      address: personalDetails[2],
       phoneNumber: personalDetails[3],
       linkedin: personalDetails[4],
       website: personalDetails[5],
