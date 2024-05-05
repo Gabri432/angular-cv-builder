@@ -54,4 +54,8 @@ export class PreviewComponent implements OnChanges {
     this.goBack.emit(true);
   }
 
+  isNullOrEmpty(str: string): boolean {
+    return str == null || str === '';
+}
+
 }

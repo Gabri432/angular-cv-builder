@@ -1,18 +1,25 @@
 <div id="preview">
     <div id="personal-section">
         <b>{{this.userCv.personalDetails.name}}</b>
-        <br />
-        {{this.userCv.personalDetails.email}}
-        <br />
-        {{this.userCv.personalDetails.address}}
-        <br />
-        {{this.userCv.personalDetails.phoneNumber}}
-        <br />
-        {{this.userCv.personalDetails.linkedin}}
-        <br />
-        {{this.userCv.personalDetails.website}}
-        <br />
-        {{this.userCv.personalDetails.shortDescription}}
+        <div>
+            <br />
+            {{this.userCv.personalDetails.email}}
+        </div>
+        <div *ngIf="!isNullOrEmpty(this.userCv.personalDetails.address)">
+            {{this.userCv.personalDetails.address}}
+        </div>
+        <div *ngIf="!isNullOrEmpty(this.userCv.personalDetails.phoneNumber!)">
+            {{this.userCv.personalDetails.phoneNumber}}
+        </div>
+        <div *ngIf="!isNullOrEmpty(this.userCv.personalDetails.linkedin!)">
+            {{this.userCv.personalDetails.linkedin}}
+        </div>
+        <div *ngIf="!isNullOrEmpty(this.userCv.personalDetails.website!)">
+            {{this.userCv.personalDetails.website}}
+        </div>
+        <div *ngIf="!isNullOrEmpty(this.userCv.personalDetails.shortDescription!)">
+            {{this.userCv.personalDetails.shortDescription}}
+        </div>
     </div>
     <hr>
     <div id="education-section">
