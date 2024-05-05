@@ -7,6 +7,7 @@ import { InputBarComponent } from './input-bar/input-bar.component';
 import { TextAreaComponent } from './text-area/text-area.component';
 import { OptionCardComponent } from './option-card/option-card.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { ColorPickerComponent } from './color-picker/color-picker.component';
 
 
 
@@ -17,9 +18,12 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     InputBarComponent,
     TextAreaComponent,
     OptionCardComponent,
-    SideBarComponent
+    SideBarComponent,
+    ColorPickerComponent
   ],
-  exports: [HeaderComponent, FooterComponent, InputBarComponent, TextAreaComponent, OptionCardComponent, SideBarComponent],
+  exports: [
+    HeaderComponent, FooterComponent, InputBarComponent, TextAreaComponent, OptionCardComponent, SideBarComponent, ColorPickerComponent
+  ],
   imports: [
     CommonModule,
     RouterModule

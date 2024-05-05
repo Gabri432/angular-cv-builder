@@ -15,12 +15,13 @@ export class PreviewComponent implements OnChanges {
     listOfExtras: []
   };
   @Output() goBack = new EventEmitter<boolean>();
+  @Input() color: string = "";
 
   educationListSize: number[] = [];
   experienceListSize: number[] = [];
   skillListSize: number[] = [];
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) { 
     this.educationListSize = [];
     this.experienceListSize = [];
     this.skillListSize = [];
@@ -40,6 +41,8 @@ export class PreviewComponent implements OnChanges {
     const printWindow = window.open('', '_blank')!;
     printWindow.document.write('<html><head><title>User Cv</title></head>');
     printWindow.document.write('<style>@media print { #personal-section { text-align: center;}');
+    printWindow.document.write('.red {color: red;} .green {color: green;}.blue {color: blue;}');
+    printWindow.document.write('.black {color: black;}.orange {color: orange;}.yellow {color: yellow;}.purple {color: purple;}');
     printWindow.document.write('table {width: 100%;}');
     printWindow.document.write('td:nth-child(1) {padding-left: 20px;}');
     printWindow.document.write('td:nth-child(2) {text-align: right; padding-right: 20px;}');
@@ -56,6 +59,10 @@ export class PreviewComponent implements OnChanges {
 
   isNullOrEmpty(str: string): boolean {
     return str == null || str === '';
-}
+  }
+
+  changeColor(newColor: string) {
+    this.color = newColor;
+  }
 
 }

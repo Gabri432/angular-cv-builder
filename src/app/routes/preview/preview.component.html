@@ -1,6 +1,7 @@
+<app-color-picker (chosenColor)="changeColor($event)"></app-color-picker>
 <div id="preview">
     <div id="personal-section">
-        <b>{{this.userCv.personalDetails.name}}</b>
+        <b class="{{color}}">{{this.userCv.personalDetails.name}}</b>
         <div>
             <br />
             {{this.userCv.personalDetails.email}}
@@ -23,7 +24,7 @@
     </div>
     <hr>
     <div id="education-section">
-        <h3>Education</h3>
+        <h3 class="{{color}}">Education</h3>
         <table>
             <tr *ngFor=" let i of educationListSize;">
                 <td><b>{{this.userCv.educationDetails.listOfInstitutes[i]}}</b></td>
@@ -33,7 +34,7 @@
     </div>
     <hr>
     <div id="experience-section">
-        <h3>Working Experiences</h3>
+        <h3 class="{{color}}">Working Experiences</h3>
         <table>
         <tr *ngFor="
             let i of experienceListSize;">
@@ -48,7 +49,7 @@
     </div>
     <hr>
     <div id="skills-section">
-        <h3>Skills</h3>
+        <h3 class="{{color}}">Skills</h3>
         <table>
             <tr *ngFor=" let i of skillListSize;">
                 <td><b>{{this.userCv.skillDetails.listOfSkillNames[i]}}</b></td>
@@ -58,7 +59,7 @@
     </div>
     <hr>
     <div id="extra-section">
-        <h3>Extras</h3>
+        <h3 class="{{color}}">Extras</h3>
         <table>
             <tr *ngFor=" let extra of this.userCv.listOfExtras;">
                 <td>{{extra}}</td>
