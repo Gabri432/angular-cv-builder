@@ -1,5 +1,5 @@
 <div id="skills-section">
-    <h2>Skills</h2>
+    <h2>Skills <a title="Specify your technical skills and describe the level of them.">?</a></h2>
     <div id="skills-extra" *ngFor="let skill of skills">
         <br />
         <app-input-bar [label]="'Name'" [placeholder]="'Programming in Java'" (dataEvent)="sendData($event, skill, 'name')"></app-input-bar>

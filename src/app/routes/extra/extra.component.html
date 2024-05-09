@@ -1,5 +1,5 @@
 <div id="extra-section">
-    <h2>Extra details about you</h2>
+    <h2>Extra details about you <a title="Give extra details about you, like your hobbies and passions.">?</a></h2>
     <div id="experiences-extra" *ngFor="let extra of extras">
         <br />
         <app-input-bar [label]="''" [placeholder]="'I like playing chess'" (dataEvent)="sendData($event, extra)"></app-input-bar>
