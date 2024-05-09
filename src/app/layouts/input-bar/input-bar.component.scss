@@ -18,3 +18,10 @@
         border-color: blue;
     }
 }
+@media only screen and (max-width: 899px) {
+    #input-bar {
+        input {
+            width: 80%;
+        }
+    }
+}
